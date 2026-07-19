@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "nuxt node",
+      "outputCapture": "std",
+      "cwd": "${workspaceFolder}/nuxt-app",
+      "program": "${workspaceFolder}/nuxt-app/node_modules/nuxt/bin/nuxt.mjs",
+      "args": [
+        "dev"
+      ],
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "nuxt chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/nuxt-app/app"
+    },
+  ],
+  "compounds": [
+    {
+      "name": "nuxt",
+      "configurations": [
+        "nuxt node",
+        "nuxt chrome"
+      ]
+    }
+  ]
+}
